@@ -9,6 +9,7 @@ eggs
 parts
 *.pyc
 src/*/*.egg-info
+*/tmp/
 *.swp
 coverage
 .python
