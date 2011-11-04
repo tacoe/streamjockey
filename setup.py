@@ -14,9 +14,10 @@ setup(name='clubfeud',
       entry_points={
           'console_scripts': [
               'spotysuck = spotysuck:main',
+              'songmetrics = songmetrics:main',
               ]},
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          "argparse"
+          "argparse","spotimeta","pyechonest"
       	])
