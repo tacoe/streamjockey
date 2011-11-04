@@ -1,0 +1,338 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 115.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/taco/Src/pqd/src/main/resources/public/js/svg/jquery.svg.compat-1.0.1.js",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/preview.css",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/services/AmazonEmailService.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/registration_endpoint.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/UserEndpoint.scala",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/library.css",
+		"/Users/taco/Src/pqd/src/main/resources/templates/projects/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/passwordEmail.ssp",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/BrowserFilter.scala",
+		"/Users/taco/Src/pqd/src/main/resources/templates/common/feedback.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/layouts/default.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/landing.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/style.css",
+		"/Users/taco/Src/pqd/src/main/resources/public/js/library.js",
+		"/Users/taco/Src/pqd/src/main/resources/templates/preview/pricewidget.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/conf/production.conf",
+		"/Users/taco/Src/pqd/src/main/resources/templates/layouts/left_tabs.ssp",
+		"/Users/taco/Src/pqd/pqd.sublime-project",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/services/DummyEmailService.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/services/EmailService.scala",
+		"/Users/taco/Src/pqd/src/main/resources/public/annotation_test.html",
+		"/Users/taco/Src/pqd/src/test/scala/proquest/services/FulfillmentServiceSpec.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/PasswordResetEndpoint.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/order_endpoint.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/download_endpoint.scala",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/annotation_endpoint.scala",
+		"/Users/taco/Src/pqd/misc/content-test/speedtest.rb",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/newPassword.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/activate.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/landing.css",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/activationEmail.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/layouts/landing.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/notactivated.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/tumblr.html",
+		"/Users/taco/Src/pqd/src/main/resources/templates/reader/capture.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/reader.css",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/reader_frame.css",
+		"/Users/taco/Src/pqd/src/main/resources/public/admin.html",
+		"/Users/taco/Src/pqd/src/main/resources/log4j.properties",
+		"/Users/taco/Src/pqd/src/main/resources/templates/login/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/signup_form.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/signup.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/about/us.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/tumblrorig.html",
+		"/Users/taco/Src/pqd/src/main/resources/public/favicon.ico",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/landing-taco.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/order/card_form.ssp",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/SignInUpEndpoint.scala",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/landing-wilfred.css",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/landing-taco.css",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/search.css",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/PaymentInfoEndpoint.scala",
+		"/Users/taco/Src/pqd/src/main/resources/templates/common/profile_controls.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/css/profile.css",
+		"/Users/taco/Src/pqd/src/main/resources/templates/common/profile_header.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/error/error.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/profile/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/servicedown.html",
+		"/Users/taco/Src/tna/www/onepercentapp/public/stylesheets/style.styl",
+		"/Users/taco/Src/tna/www/onepercentapp/views/index.jade",
+		"/Users/taco/Src/tna/www/onepercentapp/public/stylesheets/style.css",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/ProfileEndpoint.scala",
+		"/Users/taco/Src/pqd/src/main/resources/public/about/terms.html",
+		"/Users/taco/Src/pqd/src/main/resources/templates/search/frame_index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/search/marketing_index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/search/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/js/pqd.js",
+		"/Users/taco/Src/pqd/src/main/resources/public/js/landing.js",
+		"/Users/taco/Src/pqd/src/main/resources/conf/taco.conf",
+		"/Users/taco/Src/pqd/src/main/scala/proquest/web/endpoints/LoginEndpoint.scala",
+		"/Users/taco/Src/pqd/src/test/scala/proquest/web/endpoints/login_spec.scala",
+		"/Users/taco/Src/pqd/src/main/resources/templates/error/notfound.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/login/login_form.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/payment/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/preview/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/preview/marketing_index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/profile/password.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/profile/purchaseHistory.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/reader/index.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/templates/registration/emailSent.ssp",
+		"/Users/taco/Src/pqd/src/main/resources/public/js/reader_child_loader.js",
+		"/Users/taco/Desktop/PQD.sublime-project"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"svggraph",
+			"svgrraph",
+			"svgrrapg",
+			"Between",
+			"some requested",
+			"trade",
+			"unsupport",
+			"feedback",
+			"not eligible",
+			"not elegible",
+			"acceptedExtensions",
+			"acceptedExensions",
+			"ik ga morgenochtend even met gijs zitten.",
+			"you have selected",
+			"drag a file",
+			"drop_zone",
+			"Drag a file",
+			"tutorial",
+			"&",
+			"nodocs",
+			"were found",
+			"found",
+			"Conditions",
+			"sendHtmlEmail",
+			" addre",
+			"utility.",
+			"None",
+			"Nothing",
+			"create.json",
+			"Option[String]=",
+			"Option[String]=None",
+			"setRecipient",
+			"create.json",
+			".json",
+			"emailService",
+			"LoggedIn",
+			"current user",
+			"sendSimpleEmail",
+			"emailAddress",
+			"email",
+			"id=\"reset",
+			"#reset",
+			"button_continue_states",
+			"$(\"#",
+			"click(function",
+			"#activationOverlay",
+			"dialog(",
+			"dialog();",
+			"getsatisfaction",
+			"pretend",
+			"There is no",
+			"About Us",
+			"welcome",
+			"url(",
+			"h2",
+			"shadow",
+			"Must be a valid",
+			"#signup",
+			"1200",
+			"1200800",
+			"#login",
+			"Just one step and this is all yours",
+			"SVC",
+			"ypur",
+			"Conditions",
+			"Terms &amp; Conditions",
+			"twitter",
+			"1px",
+			"300",
+			"to start saving",
+			"interested",
+			"to start saving",
+			"sstate",
+			"this month or a future month",
+			"Reset your password",
+			"#profile_content",
+			"shadow",
+			"down",
+			"ninja",
+			"pqd",
+			"pqdUdini",
+			"PQD ",
+			"ProQuest ",
+			"--",
+			"emdash",
+			"clouds",
+			"pageTitle\") =",
+			"pageTitle\")=",
+			"pageTitle",
+			"pageTitke",
+			"exi",
+			"address was incorrect when",
+			"\"empty\"",
+			"Please enter a password",
+			"Your username and password failed to authenticate",
+			"MAX_EMAIL_LENGTH",
+			"You must agree with the terms and conditions",
+			"user can't be found or invalid password",
+			"Please sign in",
+			"flag",
+			"surprisingly",
+			"lime",
+			"loading.gif",
+			"240px",
+			"ProQuest Direct",
+			"forgot",
+			"background",
+			"Udini Overview",
+			"typekit",
+			"garamond"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"search.cs",
+				"main/resources/public/css/search.css"
+			],
+			[
+				"preview",
+				"main/resources/public/css/preview.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/taco/Src/pqd/pqd.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.76171875,
+	"status_bar_visible": true
+}
