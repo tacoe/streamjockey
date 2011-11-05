@@ -15,9 +15,11 @@ setup(name='clubfeud',
           'console_scripts': [
               'spotysuck = spotysuck:main',
               'songmetrics = songmetrics:main',
+              'faround = faround:main',
+              'player = player:main'
               ]},
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          "argparse","spotimeta","pyechonest"
+          "argparse","spotimeta","pyechonest","pygame"
       	])
