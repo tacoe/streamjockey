@@ -64,7 +64,8 @@ def mix(fnA, fnB, offset = 0):
 
 	# refactor this bit and specificy fill in matrix bars
 	tAs = trackA.analysis.beats[0].start
-	tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS-offset].start - CROSSFADETIME
+	#tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS-offset].start - CROSSFADETIME
+	tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1].start - CROSSFADETIME
 	afill = tAe - tAs
 	print "TO PLAY: from %5.2fs to %5.2fs over %5.2fs" % (tAs, tAe, afill)
 	print "A offset: %f" % tAs
