@@ -21,5 +21,5 @@ setup(name='clubfeud',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          "argparse","spotimeta","pyechonest","pygame"
+          "argparse","spotimeta","pyechonest"
       	])

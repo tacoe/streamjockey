@@ -8,6 +8,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     (r'^enqueue/(?P<dj>[^/]*)/(?P<spotifyid>.*)/$',"clubfeud.feudapp.views.enqueue"),
+    (r'^$',"clubfeud.feudapp.views.main"),
     # Example:
     # (r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
 

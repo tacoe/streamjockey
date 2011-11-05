@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ClubFeud</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="user-scalable=no, width=device-width"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="/media/cf.css" media="screen" />
+		<script type="text/javascript" src="/media/main.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>	
+		</head>
+	<body>
+		<div data-role="page" id="start" data-theme="a">
+
+			<div data-role="header">
+				<h1>Club Feud</h1>
+			</div>
+				<p>Let's decide who's got the best record</p>
+
+			<div data-role="content">	
+				<ul data-role="listview">
+					<li><a href="#login">w00tcamp @ Q42</a></li>
+					<li><a href="#login">Party @ Wouter's crib</a></li>
+					<li><a href="#login">Niet leuk @ Westwoord</a></li>
+				</ul>			
+			</div>
+
+		</div>
+
+		<div data-role="page" id="login" data-theme="a">
+
+			<div data-role="header">
+				<h1>Login</h1>
+			</div>
+
+			<div data-role="content">	
+				<p>Login to Spotify</p>
+				<input type="text" value="tacoe"></input><br/>
+				<input type="password" value="12345678"></input><br/>
+				<a href="#picksongs" data-role="button">Login</a>
+			</div>
+		</div>
+
+		<div data-role="page" id="picksongs" data-theme="a">
+			<div data-role="header">
+				<h1>Queue Tracks</h1>
+			</div>
+
+			<div data-role="content">	
+				<ul data-role="listview">
+					<li><a href="#" class="trackselect">Milano - Original Mix</a></li>
+					<li><a href="#" class="trackselect">All Around The World</a></li>
+					<li><a href="#" class="trackselect">Fly Away (Original Mix)</a></li>
+				</ul>			
+			</div>
+		</div>
+
+	</body>
+</html>        		

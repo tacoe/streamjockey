@@ -3,8 +3,7 @@ from . import models
 import logging
 from django.db.models.aggregates import Max
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
-
+from django.shortcuts import render_to_response, get_object_or_404
 
 def enqueue(request,dj,spotifyid):
     track = get_object_or_404(models.Track,spotifyid=spotifyid)
@@ -22,7 +21,7 @@ def enqueue(request,dj,spotifyid):
 
     return HttpResponse("{ success : true }")
 
-
-
+def main(request):
+    return render_to_response('main.html')
 
 
