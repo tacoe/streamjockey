@@ -12,6 +12,7 @@ from pprint import pprint
 from echonest.action import render, Crossfade, Playback, Crossmatch, Fadein, Fadeout, humanize_time
 from echonest.audio import LocalAudioFile
 from copy import deepcopy
+import sys
 
 metacache = {}
 metadata = spotimeta.Metadata(cache=metacache)
@@ -28,17 +29,24 @@ SHORTENTRACKS = 64 # in beats
 
 
 def main():
-	m = mix("mp3/output1.mp3", "mp3/coldenergy.mp3", 0)
-	print " * rendering"
-	render(m, 'outA.mp3')
+#	m = mix("mp3/output1.mp3", "mp3/coldenergy.mp3", 0)
+#	print " * rendering"
+#	render(m, 'outA.mp3')
+#
+#	m = mix("mp3/coldenergy.mp3", "mp3/1998.mp3", 967)
+#	print " * rendering"
+#	render(m, 'outB.mp3')
+#
+#	m = mix("mp3/1998.mp3", "mp3/milano.mp3", 575)
+#	print " * rendering"
+#	render(m, 'outC.mp3')
+    m = mix(sys.argv[1], sys.argv[2], 0)
+    print " * rendering"
+    render(m, sys.argv[3])
 
-	m = mix("mp3/coldenergy.mp3", "mp3/1998.mp3", 967)
-	print " * rendering"
-	render(m, 'outB.mp3')
 
-	m = mix("mp3/1998.mp3", "mp3/milano.mp3", 575)
-	print " * rendering"
-	render(m, 'outC.mp3')
+def save_mixing_result(m,filename):
+    render(m,filename)
 
 def mix(fnA, fnB, offset = 0):
 	print "------------------------- mixing tracks -------------------------"

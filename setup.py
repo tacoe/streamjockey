@@ -16,7 +16,8 @@ setup(name='clubfeud',
               'spotysuck = clubfeud.utils.spotysuck:main',
               'songmetrics = clubfeud.songmetrics:main',
               'faround = clubfeud.utils.faround:main',
-              'player = clubfeud.utils.player:main'
+              'player = clubfeud.utils.player:main',
+              'mixer = clubfeud.utils.mixer:main'
               ]},
       include_package_data=True,
       zip_safe=False,

@@ -8,7 +8,7 @@ import sys
 __author__ = 'boaz'
 
 
-spotify_suckc= os.path.normpath(os.path.join(os.path.dirname(__file__), "../bin/spotifysuck_c"))
+spotify_suckc= os.path.normpath(os.path.join(os.path.dirname(__file__), "spotifysuck_c"))
 
 logger = logging.getLogger("spotisuck")
 
@@ -21,14 +21,16 @@ def suckit(username,password,trackid,output_file):
     cmd = "%s -u %s -p %s -l %s -f %s" % (spotify_suckc,username, password,trackid,tmp_file)
     logger.info("Downloading %s, cmd: %s",trackid,cmd)
 
-    return_val = subprocess.call(cmd,shell=True)
+    p = subprocess.Popen(cmd,shell=True)
+    return_val = p.wait()
     if return_val:
         raise Exception("Spotify suckc failed. Bummer. Cmd %s " % (cmd,))
 
     cmd = "sox -r 44100 -e signed -b 16 -c 2 -s --endian little %s %s" % \
           (tmp_file,output_file)
     logger.info("Converting %s, cmd: %s",trackid,cmd)
-    return_val = subprocess.call(cmd,shell=True)
+    p = subprocess.Popen(cmd,shell=True)
+    return_val = p.wait()
     if return_val:
        raise Exception("Convertion failed. Bummer. Cmd %s " % (cmd,))
 

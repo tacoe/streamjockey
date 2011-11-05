@@ -16,11 +16,12 @@ def verify_known_dj(dj):
 def add_dj(dj,password):
     DJ_DICT[dj]=password
 
-
+def get_dj_password(dj):
+    return DJ_DICT[dj]
 
 
 class Track(models.Model):
-    spotifyid = models.CharField(max_length=len("spotify:track:6wlMXhRDyYPGtfBsfnpS5S"),db_index=True,unique=True)
+    spotifyid = models.CharField(max_length=200,db_index=True,unique=True)
 
     title = models.CharField(max_length=256)
     artist = models.CharField(max_length=256)
@@ -34,12 +35,12 @@ class Track(models.Model):
     def get_mp3_file_name(self):
         """ returns a full path to the track's mp3 file
         """
-        return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track"):] + ".mp3")
+        return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track:"):] + ".mp3")
 
     def get_wav_file_name(self):
         """ returns a full path to the track's wave file
         """
-        return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track"):] + ".wav")
+        return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track:"):] + ".wav")
 
 
 
@@ -51,6 +52,7 @@ class QueuedTrack(models.Model):
         ('mixed'),
         ('playing'),
         ('done'),
+        ('error'),
       )
 
 
@@ -58,6 +60,10 @@ class QueuedTrack(models.Model):
     track = models.ForeignKey(Track)
     dj = models.CharField(max_length=100) # username spotify
     state = models.CharField(choices=zip(STATE_CHOICES,STATE_CHOICES),max_length=20)
+
+
+    class Meta:
+        ordering = ['position']
 
 
 
