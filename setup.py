@@ -9,14 +9,14 @@ setup(name='clubfeud',
       description="The coolest mixing platform Ever",
       classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       keywords='',
-      py_modules=["spotysuck",],
+      packages=['clubfeud'],
       package_dir = {'': 'src'},
       entry_points={
           'console_scripts': [
-              'spotysuck = spotysuck:main',
-              'songmetrics = songmetrics:main',
-              'faround = faround:main',
-              'player = player:main'
+              'spotysuck = clubfeud.utils.spotysuck:main',
+              'songmetrics = clubfeud.songmetrics:main',
+              'faround = clubfeud.utils.faround:main',
+              'player = clubfeud.utils.player:main'
               ]},
       include_package_data=True,
       zip_safe=False,
