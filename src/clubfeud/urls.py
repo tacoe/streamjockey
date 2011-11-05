@@ -7,6 +7,7 @@ from django.conf import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^enqueue/(?P<dj>[^/]*)/(?P<spotifyid>.*)/$',"clubfeud.feudapp.views.enqueue"),
     # Example:
     # (r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
 
