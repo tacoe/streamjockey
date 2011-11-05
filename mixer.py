@@ -24,17 +24,19 @@ FUSION_INTERVAL = .06   # this is what we use in the analyzer
 AVG_PEAK_OFFSET = 0.025 # Estimated time between onset and peak of segment.
 X_FADE = 3 #
 
+SHORTENTRACKS = 64 # in beats
+
 
 def main():
 	m = mix("mp3/output1.mp3", "mp3/coldenergy.mp3", 0)
 	print " * rendering"
 	render(m, 'outA.mp3')
 
-	m = mix("mp3/coldenergy.mp3", "mp3/1998.mp3", 107)
+	m = mix("mp3/coldenergy.mp3", "mp3/1998.mp3", 967)
 	print " * rendering"
 	render(m, 'outB.mp3')
 
-	m = mix("mp3/1998.mp3", "mp3/milano.mp3", 525)
+	m = mix("mp3/1998.mp3", "mp3/milano.mp3", 575)
 	print " * rendering"
 	render(m, 'outC.mp3')
 
@@ -53,19 +55,18 @@ def mix(fnA, fnB, offset = 0):
 		track.resampled['matrix'] = timbre_whiten(track.resampled['matrix'])
 
 	# refactor this bit and specificy fill in matrix bars
-	tAs = trackA.analysis.bars[0].start
-	tAe = trackA.analysis.bars[len(trackA.analysis.bars)-1-offset].start - CROSSFADETIME
+	tAs = trackA.analysis.beats[0].start
+	tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS-offset].start - CROSSFADETIME
 	afill = tAe - tAs
+	print "TO PLAY: from %5.2fs to %5.2fs over %5.2fs" % (tAs, tAe, afill)
 	print "A offset: %f" % tAs
 	print "A xfade start: %f" % tAe
 
 	markers = getattr(trackA.analysis, trackA.resampled['rate'])
 	print "A index: %f" % markers[track.resampled['index']].start
 	print "A cursor: %f" % markers[track.resampled['cursor']].start
-	tBs = trackA.analysis.bars[0].start
 
 	start = initialize(trackA, afill, CROSSFADETIME)
-	print " * initial track piece [ TODO proper post-fade time to zero ] "
 	mid = make_transition(trackA, trackB, 0, CROSSFADETIME)
 	return start + mid
 
@@ -88,11 +89,13 @@ def initialize(track, inter, transition):
 		mat_dur = markers[track.resampled['index'] + rows(mat)].start - markers[track.resampled['index']].start
 		start = (mat_dur - inter - transition - FADE_IN) / 2
 		dur = start + FADE_IN + inter
+		print "start %5.2f plus inter %5.2f becomes duration %5.2f" % (start, inter, dur)
 		# move cursor to transition marker
 		duration, track.resampled['cursor'] = move_cursor(track, dur, 0)
 		# work backwards to find the exact locations of initial fade in and playback sections
 		fi = Fadein(track, markers[track.resampled['index'] + track.resampled['cursor']].start - inter - FADE_IN, FADE_IN)
 		pb = Playback(track, markers[track.resampled['index'] + track.resampled['cursor']].start - inter, inter)
+		print "Playback starts at %5.2f and lasts %5.2f" % (markers[track.resampled['index'] + track.resampled['cursor']].start - inter, inter)
 	except:
 		track.resampled['cursor'] = FADE_IN + inter
 		fi = Fadein(track, 0, FADE_IN)
