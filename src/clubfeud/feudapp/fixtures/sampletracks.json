@@ -14,5 +14,22 @@
        "title": "Late Night Thinking - Melons Winter Depression Mix",
         "artist": "Estroe"
       }
+   },
+ { "model" : "feudapp.Track" ,
+   "pk": 3,
+   "fields": {
+    "spotifyid": "spotify:track:5EHhkMTHKGpURNo32lDXFQ",
+    "title": "Baba Says Cool",
+     "artist": "Lupe Fiasco"
    }
+},
+ { "model" : "feudapp.Track" ,
+   "pk": 4,
+   "fields": {
+    "spotifyid": "spotify:track:3VkAjkB2HYkXyrCqj3ZG3m",
+    "title": "Free Chilly",
+     "artist": "Lupe Fiasco"
+   }
+}
+
 ]

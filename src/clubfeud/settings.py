@@ -141,7 +141,6 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler'
         },
         'console':{
-                    'level':'DEBUG',
                     'class':'logging.StreamHandler',
                 },
 
@@ -153,11 +152,18 @@ LOGGING = {
             'propagate': True,
         },
         '': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'handlers' : ['console'],
 
         },
+#        'sucker':
+#             {
+#                'level': 'DEBUG',
+#                'handlers' : ['console'],
+#
+#            },
     }
 }
 
-TRACK_CACHE_DIR = "/tmp/clubfued_cache/"
+TRACK_CACHE_DIR = "/tmp/clubfeud_cache"
+TRACK_PLAYER_DIR= "/tmp/clubfeud_player"
