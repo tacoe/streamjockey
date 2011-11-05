@@ -1,0 +1,18 @@
+[
+    { "model" : "feudapp.Track" ,
+      "pk": 1,
+      "fields": {
+       "spotifyid": "spotify:track:6wlMXhRDyYPGtfBsfnpS5S",
+       "title": "Play Away (Original Mix)",
+        "artist": "JusLo"
+      }
+   },
+    { "model" : "feudapp.Track" ,
+      "pk": 2,
+      "fields": {
+       "spotifyid": "spotify:track:611Q6WzkOwEuVmZ87TO2qh",
+       "title": "Late Night Thinking - Melons Winter Depression Mix",
+        "artist": "Estroe"
+      }
+   }
+]
