@@ -30,6 +30,31 @@
     "title": "Free Chilly",
      "artist": "Lupe Fiasco"
    }
-}
+ },
+    { "model" : "feudapp.Track" ,
+       "pk": 5,
+       "fields": {
+        "spotifyid": "spotify:track:4CymQJOGE65TuQfYgR7xpT",
+        "title": "Army of Two",
+         "artist": "-"
+       }
+    },
+     { "model" : "feudapp.Track" ,
+       "pk": 6,
+       "fields": {
+        "spotifyid": "spotify:track:6EbvT3IDaDZvqIOQFMyYKM",
+        "title": "Love under pressure",
+         "artist": "-"
+       }
+     },
+    { "model" : "feudapp.Track" ,
+           "pk": 7,
+           "fields": {
+            "spotifyid": "spotify:track:2u6malVDYwynsdqLlpyjl9",
+            "title": "The heart break files",
+             "artist": "-"
+           }
+        }
+
 
 ]

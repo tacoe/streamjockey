@@ -21,7 +21,7 @@ def suckit(username,password,trackid,output_file):
     cmd = "%s -u %s -p %s -l %s -f %s" % (spotify_suckc,username, password,trackid,tmp_file)
     logger.info("Downloading %s, cmd: %s",trackid,cmd)
 
-    p = subprocess.Popen(cmd,shell=True)
+    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     return_val = p.wait()
     if return_val:
         raise Exception("Spotify suckc failed. Bummer. Cmd %s " % (cmd,))
@@ -29,7 +29,7 @@ def suckit(username,password,trackid,output_file):
     cmd = "sox -r 44100 -e signed -b 16 -c 2 -s --endian little %s %s" % \
           (tmp_file,output_file)
     logger.info("Converting %s, cmd: %s",trackid,cmd)
-    p = subprocess.Popen(cmd,shell=True)
+    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     return_val = p.wait()
     if return_val:
        raise Exception("Convertion failed. Bummer. Cmd %s " % (cmd,))

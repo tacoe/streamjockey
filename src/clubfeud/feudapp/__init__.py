@@ -10,6 +10,7 @@ from django.db.models import signals
 import traceback
 import sys
 from clubfeud.utils import spotysuck, mixer
+from clubfeud.utils.player import QueuedWavePlayer
 
 
 class QueueListener(object):
@@ -125,13 +126,13 @@ class Mixer(QueueListener):
         def background():
             try:
 
-                ta = queued_track.track.get_mp3_file_name()
-                tb=following_track.track.get_mp3_file_name()
+                ta = str(queued_track.track.get_mp3_file_name())
+                tb=str(following_track.track.get_mp3_file_name())
                 self.logger.info("Mixing %s and %s. GO TACO!",ta,tb)
                 m=mixer.mix(ta,tb,0)
 
-                wav = os.path.join(settings.TRACK_PLAYER_DIR,"playlist.%s.mp3",queued_track.position)
-                self.logger.info("Saving the mix of %s and %s to %s",ta,tb,queued_track.position)
+                wav = str(queued_track.get_wav_file_name())
+                self.logger.info("Saving the mix of %s and %s to %s",ta,tb,wav)
                 mixer.save_mixing_result(m,wav)
 
                 queued_track.state="mixed"
@@ -151,14 +152,49 @@ class Mixer(QueueListener):
         t.daemon=True
         t.start()
 
+class QueuePlayer(QueueListener):
+
+    def __init__(self,name):
+        self.player = QueuedWavePlayer()
+        super(QueuePlayer,self).__init__(name)
+
+
+    def get_queued_trackes_to_be_processed(self):
+        with self.lock:
+            for queued_track in models.QueuedTrack.objects.filter(state='mixed'):
+                    yield queued_track
+
+
+    def process_queued(self,queued_track):
+        try:
+            self.logger.info("Sending %s to player (%s)..",queued_track.track.spotifyid,queued_track.get_wav_file_name())
+            self.player.queue_for_playing(queued_track.get_wav_file_name())
+            queued_track.state="played"
+            queued_track.save()
+        except  Exception as e:
+            self.logger.exception("background thread had an error: %s",e)
+            queued_track.state="error"
+            queued_track.save() # triggers a track change notification
+            queued_track.save() # triggers a track change notification
+
+
+
+
+
+
+
+
+
 
 GLOBAL_SUCKER=Sucker("sucker")
 GLOBAL_MIXER=Mixer("mixer")
+GLOBAL_PLAYER=QueuePlayer("player")
 
 def queued_post_save(sender, instance, signal, *args, **kwargs):
    # Creates user profile
     GLOBAL_SUCKER.notify_track_queue_change()
     GLOBAL_MIXER.notify_track_queue_change()
+    GLOBAL_PLAYER.notify_track_queue_change()
 
 signals.post_save.connect(queued_post_save, sender=models.QueuedTrack)
 

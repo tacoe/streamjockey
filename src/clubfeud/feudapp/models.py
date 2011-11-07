@@ -37,10 +37,6 @@ class Track(models.Model):
         """
         return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track:"):] + ".mp3")
 
-    def get_wav_file_name(self):
-        """ returns a full path to the track's wave file
-        """
-        return os.path.join(Track.get_track_cache_dir(),self.spotifyid[len("spotify:track:"):] + ".wav")
 
 
 
@@ -61,6 +57,11 @@ class QueuedTrack(models.Model):
     dj = models.CharField(max_length=100) # username spotify
     state = models.CharField(choices=zip(STATE_CHOICES,STATE_CHOICES),max_length=20)
 
+
+    def get_wav_file_name(self):
+        """ returns a full path to the track's wave file
+        """
+        return os.path.join(settings.TRACK_PLAYER_DIR,"playlist.%s.wav" % (self.position,))
 
     class Meta:
         ordering = ['position']

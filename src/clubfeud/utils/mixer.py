@@ -25,7 +25,7 @@ FUSION_INTERVAL = .06   # this is what we use in the analyzer
 AVG_PEAK_OFFSET = 0.025 # Estimated time between onset and peak of segment.
 X_FADE = 3 #
 
-SHORTENTRACKS = 64 # in beats
+SHORTENTRACKS = 8 #64 # in beats
 
 
 def main():
@@ -49,35 +49,36 @@ def save_mixing_result(m,filename):
     render(m,filename)
 
 def mix(fnA, fnB, offset = 0):
-	print "------------------------- mixing tracks -------------------------"
-	# get mp3 from spotisuck
-	print " * loading and analyzing track A"
-	trackA = LocalAudioFile(fnA)
-	print " * loading and analyzing track B"
-	trackB = LocalAudioFile(fnB)
+    print "------------------------- mixing tracks -------------------------"
+    # get mp3 from spotisuck
+    print " * loading and analyzing track A"
+    trackA = LocalAudioFile(fnA)
+    print " * loading and analyzing track B"
+    trackB = LocalAudioFile(fnB)
 
-	tracks = [trackA, trackB]
-	print " * resampling tracks"
-	for track in tracks:
-		track.resampled = resample_features(track)
-		track.resampled['matrix'] = timbre_whiten(track.resampled['matrix'])
+    tracks = [trackA, trackB]
+    print " * resampling tracks"
+    for track in tracks:
+        track.resampled = resample_features(track)
+        track.resampled['matrix'] = timbre_whiten(track.resampled['matrix'])
 
-	# refactor this bit and specificy fill in matrix bars
-	tAs = trackA.analysis.beats[0].start
-	#tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS-offset].start - CROSSFADETIME
-	tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS].start - CROSSFADETIME
-	afill = tAe - tAs
-	print "TO PLAY: from %5.2fs to %5.2fs over %5.2fs" % (tAs, tAe, afill)
-	print "A offset: %f" % tAs
-	print "A xfade start: %f" % tAe
+    # refactor this bit and specificy fill in matrix bars
+    tAs = trackA.analysis.beats[0].start
+    #tAe = trackA.analysis.beats[len(trackA.analysis.beats)-1-SHORTENTRACKS-offset].start - CROSSFADETIME
+#    print("Boo: %s" % (trackA.analysis.beats,))
+    tAe = max(tAs,trackA.analysis.beats[max(len(trackA.analysis.beats)-1-SHORTENTRACKS,3)].start - CROSSFADETIME)
+    afill = tAe - tAs
+    print "TO PLAY: from %5.2fs to %5.2fs over %5.2fs. " % (tAs, tAe, afill)
+    print "A offset: %f" % tAs
+    print "A xfade start: %f" % tAe
 
-	markers = getattr(trackA.analysis, trackA.resampled['rate'])
-	print "A index: %f" % markers[track.resampled['index']].start
-	print "A cursor: %f" % markers[track.resampled['cursor']].start
+    markers = getattr(trackA.analysis, trackA.resampled['rate'])
+    print "A index: %f" % markers[track.resampled['index']].start
+    print "A cursor: %f" % markers[track.resampled['cursor']].start
 
-	start = initialize(trackA, afill, CROSSFADETIME)
-	mid = make_transition(trackA, trackB, 0, CROSSFADETIME)
-	return start + mid
+    start = initialize(trackA, afill, CROSSFADETIME)
+    mid = make_transition(trackA, trackB, 0, CROSSFADETIME)
+    return start + mid
 
 def timbre_whiten(mat):
 	if rows(mat) < 2: return mat
